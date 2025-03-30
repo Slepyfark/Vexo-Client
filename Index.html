@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexo Client - Будущее читов</title>
+    
+    <link rel="icon" type="image/png" href="photo_2025-03-19_18-09-01-removebg-preview.png">
+    
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('1625797183_4-kartinkin-com-p-mainkraft-oboi-personazhi-krasivie-4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 15px 25px;
+            background-color: rgba(10, 10, 10, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .top-bar .logo {
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            color: #A7C7E7;
+            text-shadow: 0 0 10px rgba(167, 199, 231, 0.3);
+        }
+
+        .container {
+            padding: 120px 50px 60px;
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-us {
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .about-us h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #A7C7E7;
+        }
+
+        .about-us p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .feature-box {
+            background-color: rgba(18, 18, 18, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background-color: rgba(28, 28, 28, 0.9);
+            border-color: #A7C7E7;
+        }
+
+        .feature-box h3 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #A7C7E7;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .buy-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #A7C7E7, #2E2E2E, #A7C7E7);
+            background-size: 300% 300%;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 40px auto 0;
+            border: 1px solid #3a3a3a;
+            animation: colorFlow 6s infinite linear;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes colorFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .buy-button:hover {
+            box-shadow: 0 0 20px rgba(167, 199, 231, 0.6);
+            transform: scale(1.05);
+        }
+
+        .buy-button img {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+        }
+
+        .preview-section {
+            margin-top: 70px;
+            padding: 30px 20px;
+        }
+
+        .preview-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #A7C7E7;
+        }
+
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .screenshots img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: #A7C7E7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 100px 20px 40px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .screenshots {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="top-bar">
+        <div class="logo">
+            Vexo Client
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="about-us">
+            <h2>О Vexo Client</h2>
+            <p>Профессиональный игровой клиент, созданный для тех, кто ценит преимущество в сочетании с элегантностью. Максимальная производительность и непревзойденный визуал в одном решении.</p>
+        </div>
+
+        <a href="https://t.me/VexoClient" class="buy-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> Скачать сейчас
+        </a>
+
+        <div class="features">
+            <div class="feature-box">
+                <h3>Оптимизация</h3>
+                <p>Инновационные технологии оптимизации позволяют добиться плавного геймплея даже на слабых системах. Мы минимизировали нагрузку на процессор и видеокарту без потери качества.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Дизайн</h3>
+                <p>Современный интерфейс с поддержкой темных тем и кастомных скинов. Каждый элемент продуман для максимального удобства и эстетического удовольствия.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Настройки</h3>
+                <p>Гибкая система настроек позволяет адаптировать клиент под любые требования. От тонкой настройки графики до персонализации интерфейса - полный контроль в ваших руках.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Обновления</h3>
+                <p>Регулярные обновления с новыми функциями и улучшениями. Мы постоянно работаем над клиентом, чтобы вы всегда были на шаг впереди.</p>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2 class="preview-title">Галерея</h2>
+            <div class="screenshots">
+                <img src="Screen.png" alt="Интерфейс Vexo Client">
+                <img src="photo_2025-03-22_18-42-47.png" alt="Настройки Vexo Client">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
